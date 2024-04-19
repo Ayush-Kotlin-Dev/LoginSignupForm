@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">InstaU</string>
+
+<string name="password_requirement_characters">
+At least 8 characters
+</string>
+
+<string name="password_requirement_capital">
+At least 1 upper-case letter
+</string>
+<string name="password_requirement_digit">
+At least 1 digit
+</string>
+
+<string name="label_sign_in_to_account">
+Sign In to your account
+</string>
+<string name="label_sign_up_for_account">
+Sign Up for an account
+</string>
+
+<string name="label_email">Email Address</string>
+<string name="label_password">Password</string>
+<string name="label_username">Username</string>
+<string name="label_phone">Phone Number</string>
+
+<string name="cd_show_password">Show Password</string>
+<string name="cd_hide_password">Hide Password</string>
+
+<string name="password_requirement_satisfied">
+%s, satisfied
+</string>
+<string name="password_requirement_needed">
+%s, needed
+</string>
+
+<string name="action_sign_up">Sign Up</string>
+<string name="action_sign_in">Sign In</string>
+
+<string name="action_need_account">
+Need an account?
+</string>
+<string name="action_already_have_account">
+Already have an account?
+</string>
+
+<string name="error_title">Whoops</string>
+<string name="error_action">OK</string>
+
+<!--HomeScreen-->
+<string name="cd_create_item">Create a new item</string>
+<string name="cd_more_information">More information</string>
+<string name="not_available_yet">Not available yet</string>
+
+<string name="label_name">Username</string>
+<string name="label_email_drawer">contact@compose.academy</string>
+<string name="log_out">Logout</string>
+<string name="cd_open_menu">Open Menu</string>
+<string name="title_inbox">Inbox (%s)</string>
+<string name="message_content_error">
+Whoops, there was a problem loading the content.
+</string>
+<string name="label_try_again">Try again?</string>
+
+<string name="message_empty_content">
+Nothing to show here yet.
+</string>
+<string name="label_check_again">Check again</string>
+<string name="cd_delete_email">Delete Email</string>
+    <string name="label_phone_number">PhoneNumber\n</string>
+</resources>
