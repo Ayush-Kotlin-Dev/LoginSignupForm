@@ -1,4 +1,4 @@
-package ggv.ayush.instau.authentication
+package ggv.ayush.instau.Presentation.authentication
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -56,16 +56,17 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import ggv.ayush.instau.R
-import ggv.ayush.instau.authentication.Tags.TAG_CONTENT
-import ggv.ayush.instau.authentication.Tags.TAG_ERROR_ALERT
-import ggv.ayush.instau.authentication.Tags.TAG_INPUT_PASSWORD
-import ggv.ayush.instau.authentication.Tags.TAG_PASSWORD_HIDDEN
-import ggv.ayush.instau.authentication.Tags.TAG_PROGRESS
+import ggv.ayush.instau.Presentation.authentication.Tags.TAG_CONTENT
+import ggv.ayush.instau.Presentation.authentication.Tags.TAG_ERROR_ALERT
+import ggv.ayush.instau.Presentation.authentication.Tags.TAG_INPUT_PASSWORD
+import ggv.ayush.instau.Presentation.authentication.Tags.TAG_PASSWORD_HIDDEN
+import ggv.ayush.instau.Presentation.authentication.Tags.TAG_PROGRESS
 
 
 @Preview(showBackground = true)
@@ -168,7 +169,7 @@ fun AuthenticationForm(
     enabledAuthentication: Boolean,
     onToggleMode: () -> Unit,
 
-    userName : String?,
+    userName: String?,
     onNameChange: (name: String) -> Unit,
     phoneNumber: String?,
     onPhoneNumberChange: (phoneNumber: String) -> Unit
@@ -200,8 +201,7 @@ fun AuthenticationForm(
 
 
                 EmailInput(
-                    modifier = Modifier.
-                    fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth(),
                     email = email,
                     onEmailChange = onEmailChange
                 ) {
@@ -516,27 +516,33 @@ fun EmailInput(
     }, singleLine = true
     )
 }
+
 @Composable
 fun Username(
     userName: String?,
     modifier: Modifier = Modifier,
     onNameChange: (name: String) -> Unit
 ) {
-    TextField(modifier = modifier.testTag(Tags.TAG_INPUT_USERNAME), keyboardOptions = KeyboardOptions(
-        imeAction = ImeAction.Next,
-        keyboardType = KeyboardType.Text,
-    ),
+    TextField(modifier = modifier.testTag(Tags.TAG_INPUT_USERNAME),
+        keyboardOptions = KeyboardOptions(
+            imeAction = ImeAction.Next,
+            keyboardType = KeyboardType.Text,
+        ),
 //        keyboardActions = KeyboardActions(onNext = {
 //        onNextClicked()
 //    }) ,
-       value =  userName?: "", onValueChange = {
+        value = userName ?: "",
+        onValueChange = {
             onNameChange(it)
 
-    }, label = { Text(text = stringResource(id = R.string.label_username)) }, leadingIcon = {
-        Icon(
-            imageVector = Icons.Default.SupervisedUserCircle, contentDescription = null
-        )
-    }, singleLine = true
+        },
+        label = { Text(text = stringResource(id = R.string.label_username)) },
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Default.SupervisedUserCircle, contentDescription = null
+            )
+        },
+        singleLine = true
     )
 }
 
@@ -546,21 +552,31 @@ fun PhoneNumberInput(
     modifier: Modifier = Modifier,
     onPhoneNumberChange: (phoneNumber: String) -> Unit
 ) {
-    TextField(modifier = modifier.testTag(Tags.TAG_INPUT_USERNAME), keyboardOptions = KeyboardOptions(
-        imeAction = ImeAction.Next,
-        keyboardType = KeyboardType.Phone,
-    ),
+    TextField(modifier = modifier.testTag(Tags.TAG_INPUT_USERNAME),
+        keyboardOptions = KeyboardOptions(
+            imeAction = ImeAction.Next,
+            keyboardType = KeyboardType.Phone,
+        ),
 //        keyboardActions = KeyboardActions(onNext = {
 //        onNextClicked()
 //    }) ,
-        value =  phoneNumber?: "", onValueChange = {
+        value = phoneNumber ?: "",
+        onValueChange = {
             onPhoneNumberChange(it)
 
-        }, label = { Text(text = stringResource(id = R.string.label_phone_number)) }, leadingIcon = {
+        },
+        label = {
+            Text(
+                text = stringResource(id = R.string.label_phone_number),
+            )
+        },
+        leadingIcon = {
             Icon(
                 imageVector = Icons.Default.Phone, contentDescription = null
             )
-        }, singleLine = true
+        },
+
+        singleLine = true
     )
 }
 

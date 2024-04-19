@@ -1,4 +1,4 @@
-package ggv.ayush.instau.authentication
+package ggv.ayush.instau.Presentation.authentication
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

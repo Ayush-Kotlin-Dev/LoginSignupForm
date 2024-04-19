@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.google.devtools.ksp")
+    id("dagger.hilt.android.plugin")
+    id("com.google.dagger.hilt.android")
+    id ("kotlinx-serialization")
 }
 
 android {
@@ -75,6 +79,8 @@ dependencies {
     implementation ("io.coil-kt:coil-compose:2.4.0")
 
 
+
+
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
@@ -83,8 +89,54 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    
+// Horizontal Pager and Indicators - Accompanist
+    implementation("com.google.accompanist:accompanist-pager: 0.35.0-alpha")
+    implementation ("com.google.accompanist:accompanist-pager-indicators:0.35.0-alpha")
 
+    implementation ("org.apache.poi:poi-ooxml:5.2.4")
+    implementation ("androidx.compose.runtime:runtime:1.6.5")
 
-    androidTestImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
-    androidTestImplementation("org.mockito:mockito-android:5.6.0")
+    implementation("com.google.dagger:hilt-android:2.51")
+    ksp("com.google.dagger:hilt-compiler:2.51")
+    //hilt
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+    implementation("io.coil-kt:coil-compose:2.6.0")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0")
+
+    val room = "2.6.1"
+    // Room
+    implementation("androidx.room:room-runtime:$room")
+    implementation("androidx.room:room-ktx:$room")
+    ksp("androidx.room:room-compiler:$room")
+    implementation("androidx.room:room-paging:2.6.1")
+
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+
+    // Paging 3.0
+    implementation("androidx.paging:paging-compose:1.0.0-alpha14")
+
+    // KotlinX Serialization
+    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+
+    // DataStore Preferences
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
+    // System UI Controller - Accompanist
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.35.0-alpha")
+    // Swipe to Refresh - Accompanist
+    implementation ("com.google.accompanist:accompanist-swiperefresh:0.35.0-alpha")
+    implementation ("androidx.compose.ui:ui:1.6.5")
+    implementation ("androidx.compose.material:material:1.6.5")
+    implementation ("androidx.compose.ui:ui-tooling:1.6.5")
 }

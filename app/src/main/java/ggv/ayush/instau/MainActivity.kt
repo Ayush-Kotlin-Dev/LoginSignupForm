@@ -10,10 +10,21 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import ggv.ayush.instau.authentication.Authentication
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
+import ggv.ayush.instau.Presentation.authentication.Authentication
+import ggv.ayush.instau.screen.splash.SplashScreen
+import ggv.ayush.instau.screen.welcome.WelcomeScreen
 import ggv.ayush.instau.ui.theme.InstaUTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -23,7 +34,22 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Authentication()
+                    navController = rememberNavController()
+
+                    NavHost(navController = navController as NavHostController, startDestination = "splash") {
+
+
+                        // Add the composable screens here
+                        composable(route = "splash") {
+                            SplashScreen(navController = navController)
+                        }
+                        composable(route = "welcome") {
+                            WelcomeScreen(navController = navController)
+                        }
+                        composable(route = "authentication") {
+                            Authentication()
+                        }
+                    }
 
                 }
             }

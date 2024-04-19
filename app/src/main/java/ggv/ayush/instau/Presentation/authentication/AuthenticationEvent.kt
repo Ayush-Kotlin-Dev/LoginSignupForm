@@ -1,4 +1,4 @@
-package ggv.ayush.instau.authentication
+package ggv.ayush.instau.Presentation.authentication
 
 sealed class AuthenticationEvent {
     object ToggleAuthenticationMode : AuthenticationEvent()
@@ -16,7 +16,7 @@ sealed class AuthenticationEvent {
     AuthenticationEvent()
 
 
-    object Authenticate:AuthenticationEvent()
+    object Authenticate: AuthenticationEvent()
 
     object ErrorDismissed: AuthenticationEvent()
 
