@@ -1,4 +1,4 @@
-package ggv.ayush.instau.Presentation.authentication
+package ggv.ayush.instau.Presentation.screen.authentication
 
 object Tags {
     const val TAG_AUTHENTICATE_BUTTON = "authenticate_button"

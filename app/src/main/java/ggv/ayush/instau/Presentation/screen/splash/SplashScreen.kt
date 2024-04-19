@@ -1,4 +1,4 @@
-package ggv.ayush.instau.screen.splash
+package ggv.ayush.instau.Presentation.screen.splash
 
 import androidx.compose.animation.core.Easing
 import androidx.compose.animation.core.LinearEasing
@@ -30,6 +30,8 @@ import ggv.ayush.instau.R
 import ggv.ayush.instau.screens.splash.SplashViewModel
 import ggv.ayush.instau.ui.theme.Purple500
 import ggv.ayush.instau.ui.theme.Purple700
+import ggv.ayush.instau.util.common.StatusbarColor
+import ggv.ayush.instau.util.common.SystemBarsColor
 
 
 @Composable
@@ -37,15 +39,8 @@ fun SplashScreen(
     navController: NavController,
     splashViewModel: SplashViewModel = hiltViewModel()
 ) {
-    val systemUiController = rememberSystemUiController()
-    systemUiController.setStatusBarColor(
-        color = if (isSystemInDarkTheme()) Color.Black else Purple700
-    )
-    //status bar content color
-    systemUiController.setSystemBarsColor(
-        color = if (isSystemInDarkTheme()) Purple700 else Purple700
-    )
-
+    StatusbarColor()
+    SystemBarsColor()
     val onBoardingCompleted = splashViewModel.onBoardingCompleted.collectAsState()
     val degrees = remember {
         androidx.compose.animation.core.Animatable(0f)
@@ -84,8 +79,21 @@ fun SplashScreen(
 
 @Composable
 fun Splash(degrees: Float, logoPosition: Float) {
-    Box(
-        modifier = Modifier
+    if(isSystemInDarkTheme()){
+        Box(modifier = Modifier
+            .background(Color.Black)
+            .fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ){
+            Image(
+                modifier = Modifier.rotate(degrees).offset(y = Dp(logoPosition)),
+                painter = painterResource(id = R.drawable.explore),
+                contentDescription = null
+            )
+
+        }
+    }else{
+        Box(modifier = Modifier
             .background(
                 Brush.verticalGradient(
                     listOf(Purple700, Purple500),
@@ -94,16 +102,16 @@ fun Splash(degrees: Float, logoPosition: Float) {
                 )
             )
             .fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Image(
-            modifier = Modifier
-                .rotate(degrees)
-                .offset(y = Dp(logoPosition)),
-            painter = painterResource(id = R.drawable.explore),
-            contentDescription = null
-        )
+            contentAlignment = Alignment.Center
+        ){
+            Image(
+                modifier = Modifier.rotate(degrees).offset(y = Dp(logoPosition)),
+                painter = painterResource(id = R.drawable.explore
+                ),
+                contentDescription = null
+            )
 
+        }
     }
 }
 

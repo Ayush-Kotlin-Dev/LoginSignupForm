@@ -1,4 +1,4 @@
-package ggv.ayush.instau.screen.welcome
+package ggv.ayush.instau.Presentation.screen.welcome
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

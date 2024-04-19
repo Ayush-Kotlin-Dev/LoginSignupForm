@@ -1,4 +1,4 @@
-package ggv.ayush.instau.Presentation.authentication
+package ggv.ayush.instau.Presentation.screen.authentication
 
 sealed class AuthenticationEvent {
     object ToggleAuthenticationMode : AuthenticationEvent()

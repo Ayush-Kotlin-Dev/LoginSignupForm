@@ -1,4 +1,4 @@
-package ggv.ayush.instau.Presentation.Home
+package ggv.ayush.instau.Presentation.screen.Home
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable

@@ -1,4 +1,4 @@
-package ggv.ayush.instau.screen.welcome
+package ggv.ayush.instau.Presentation.screen.welcome
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ExperimentalFoundationApi

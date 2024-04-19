@@ -1,4 +1,4 @@
-package ggv.ayush.instau.Presentation.authentication
+package ggv.ayush.instau.Presentation.screen.authentication
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -62,11 +62,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import ggv.ayush.instau.R
-import ggv.ayush.instau.Presentation.authentication.Tags.TAG_CONTENT
-import ggv.ayush.instau.Presentation.authentication.Tags.TAG_ERROR_ALERT
-import ggv.ayush.instau.Presentation.authentication.Tags.TAG_INPUT_PASSWORD
-import ggv.ayush.instau.Presentation.authentication.Tags.TAG_PASSWORD_HIDDEN
-import ggv.ayush.instau.Presentation.authentication.Tags.TAG_PROGRESS
+import ggv.ayush.instau.Presentation.screen.authentication.Tags.TAG_CONTENT
+import ggv.ayush.instau.Presentation.screen.authentication.Tags.TAG_ERROR_ALERT
+import ggv.ayush.instau.Presentation.screen.authentication.Tags.TAG_INPUT_PASSWORD
+import ggv.ayush.instau.Presentation.screen.authentication.Tags.TAG_PASSWORD_HIDDEN
+import ggv.ayush.instau.Presentation.screen.authentication.Tags.TAG_PROGRESS
 
 
 @Preview(showBackground = true)

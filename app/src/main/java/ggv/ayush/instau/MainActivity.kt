@@ -16,9 +16,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import ggv.ayush.instau.Presentation.authentication.Authentication
-import ggv.ayush.instau.screen.splash.SplashScreen
-import ggv.ayush.instau.screen.welcome.WelcomeScreen
+import ggv.ayush.instau.Presentation.screen.authentication.Authentication
+import ggv.ayush.instau.Presentation.screen.splash.SplashScreen
+import ggv.ayush.instau.Presentation.screen.welcome.WelcomeScreen
 import ggv.ayush.instau.ui.theme.InstaUTheme
 
 @AndroidEntryPoint
